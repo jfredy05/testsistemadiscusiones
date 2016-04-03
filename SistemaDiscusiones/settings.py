@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'social.apps.django_app.default',
-    'djrill',
+    # 'djrill',
     'apps.home',
     'apps.discuss',
     # 'apps.users',
@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'SistemaDiscusiones.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -109,5 +109,5 @@ SOCIAL_AUTH_PIPELINE = (
         'apps.users.pipelines.get_avatar',
     )
 
-EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
-MANDRILL_API_KEY = 'ac65dc8305a1d4146de45c281bbc1242-us7'
+# EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
+# MANDRILL_API_KEY = 'ac65dc8305a1d4146de45c281bbc1242-us7'
