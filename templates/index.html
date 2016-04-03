@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Curso Django 1.6</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	{% if not user.is_authenticated %}
+		<h1>HOLA MUNDO</h1>
+		<div class="login">
+			<div class="conect">
+				<span>Conectate con:</span>
+				<a href="{% url 'social:begin' 'facebook' %}">Facebook</a>
+				<a href="{% url 'social:begin' 'twitter' %}">Twitter</a>
+			</div>
+		</div>
+		<h2>Preguntas</h2>
+		{% for question, tags in object_list %}
+			{{question}} <br> {{question.modified}} {{question.created}}
+			<ul>
+			{% for tag in tags %}
+				<li>{{tag.nombre}}</li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+	{% else %}
+		<div class="session">
+			{{user.username}}
+			<img src="{{user.avatar}}" alt="">
+		</div>
+	{% endif %}
+
+</body>
+</html>
